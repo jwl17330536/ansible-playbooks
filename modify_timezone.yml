@@ -1,0 +1,11 @@
+---
+- name: Modify Timezone
+  hosts: all
+  remote_user: ansible
+  become: yes
+  become_user: root
+  tasks:
+
+  - name: Set timezone to New York
+    community.general.timezone:
+      name: America/New_York
