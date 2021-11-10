@@ -1,10 +1,13 @@
 ---
-  - name: Update pihole version
-    hosts: all
-    remote_user: ansible
-    become: yes
-    become_user: root
-    tasks:
+- name: Update pihole version
+  hosts: all
+  remote_user: ansible
+  become: yes
+  become_user: root
+  tasks:
 
-    - name: Update pihole
-      command: sudo pihole -up
+  - name: Collect facts
+    setup:
+  
+  - name: Update pihole
+    command: sudo pihole -up
