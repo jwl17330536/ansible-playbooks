@@ -1,6 +1,5 @@
 ---
-  - name: Install a slave nameserver node
-    hosts: pihole_server
+  - name: Update pihole version
     remote_user: ansible
     become: yes
     become_user: root
