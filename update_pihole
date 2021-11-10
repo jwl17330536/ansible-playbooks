@@ -1,0 +1,10 @@
+---
+  - name: Install a slave nameserver node
+    hosts: pihole_server
+    remote_user: ansible
+    become: yes
+    become_user: root
+    tasks:
+
+    - name: Update pihole
+      command: sudo pihole -up
