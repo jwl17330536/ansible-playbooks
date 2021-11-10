@@ -13,3 +13,13 @@
       owner: root
       group: root
       mode: 0644
+
+  - name: Gather the current IP address
+      shell: hostname
+      register: hostname
+
+  - name: Correct the /etc/hosts entry for standardization
+    ansible.builtin.lineinfile:
+      path: /etc/hosts
+      line: "127.0.0.1     {{ hostname.stdout }}.lindleyhome.com  {{ hostname.stdout }}"
+      create: yes
